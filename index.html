@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Den's Transfer — Objednávka</title>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__container">
+    <a class="logo" href="index.html" aria-label="Den's Transfer">
+      <span class="logo__text">Den's Transfer</span>
+    </a>
+
+    <nav class="nav" aria-label="Hlavné menu">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="about.html">O mne</a></li>
+        <li class="nav__item"><a class="nav__link" href="pricing.html">Cenník</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Objednať</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="form">
+    <form action="https://formspree.io/f/mojnkblo" method="POST" id="form_data" class="form_data">
+      <h1 class="form_title">Objednávka</h1>
+      <h4 class="form_description">
+        Po vyplnení a zaslaní objednávky vás budeme kontaktovať e-mailom ohľadom potvrdenia a upresnenia všetkých podrobností.
+        Vyplňte všetky povinné polia*: meno a priezvisko, e-mail, telefónne číslo, odkiaľ, kam, čas, počet osôb, dátum.
+        Pre upresnenie môžete vyplniť aj krátky popis k objednávke.
+      </h4>
+
+      <div class="mb-3">
+        <label for="firstname" class="form-label">Meno *</label>
+        <input type="text" class="form-control _req" id="firstname" name="firstname" placeholder="Meno">
+      </div>
+
+      <div class="mb-3">
+        <label for="surname" class="form-label">Priezvisko *</label>
+        <input type="text" class="form-control _req" id="surname" name="surname" placeholder="Priezvisko">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail *</label>
+        <input type="email" class="form-control _req _email" id="email" name="email" placeholder="E-mail">
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Tel. číslo *</label>
+        <input type="tel" class="form-control _req" id="phone" name="phone" placeholder="Tel. číslo">
+      </div>
+
+      <div class="mb-3">
+        <label for="address_start" class="form-label">Adresa vyzdvihnutia *</label>
+        <input type="text" class="form-control _req" id="address_start" name="address_start" placeholder="Adresa vyzdvihnutia">
+      </div>
+
+      <div class="mb-3">
+        <label for="destination" class="form-label">Cieľová adresa *</label>
+        <select class="form-control" id="destination" name="destination">
+          <option value="--">------</option>
+          <option value="LETISKO BRATISLAVA">LETISKO BRATISLAVA (30€)</option>
+          <option value="LETISKO SCHWECHAT">LETISKO SCHWECHAT (70€)</option>
+          <option value="VIEDEŇ, CENTRUM">VIEDEŇ, CENTRUM (95€)</option>
+          <option value="BRNO">BRNO (155€)</option>
+          <option value="BUDAPEŠŤ">BUDAPEŠŤ (240€)</option>
+          <option value="PRAHA">PRAHA (350€)</option>
+          <option value="INÉ">INÉ (uveďte do správy pre vodiča)</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Dátum vyzdvihnutia *</label>
+        <input type="date" class="form-control _req" id="date" name="date">
+      </div>
+
+      <div class="mb-3">
+        <label for="time" class="form-label">Čas vyzdvihnutia *</label>
+        <input type="time" class="form-control _req" id="time" name="time">
+      </div>
+
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Počet osôb *</label>
+        <input type="number" min="1" max="3" class="form-control _req" id="quantity" name="quantity" placeholder="Počet osôb">
+      </div>
+
+      <div class="mb-3">
+        <label for="text" class="form-label">Správa pre vodiča</label>
+        <textarea class="form-control" id="text" name="text" rows="4"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <div class="checkbox">
+          <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox_input _req">
+          <label for="formAgreement" class="checkbox_label">
+            <span>Súhlasím so všeobecnými obchodnými podmienkami a informáciou o spracúvaní osobných údajov pre účely vybavenia objednávky.</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Honeypot (anti-spam) -->
+        <div class="hp-field">
+            <label for="company">Nechajte toto pole prázdne</label>
+            <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+
+      <button type="submit" name="submit" class="btn btn-primary">Objednať transfer</button>
+    </form>
+  </div>
+</div>
+
+<script src="./js/script.js"></script>
+
+
+</body>
+</html>

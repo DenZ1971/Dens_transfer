@@ -1,0 +1,472 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;               /* занимает всю высоту окна */
+    display: flex;
+    align-items: center;             /* центр по вертикали */
+    justify-content: center;         /* центр по горизонтали */
+    background-image: url("../img/img1.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    padding: 40px 15px;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 30px;
+
+    background: rgba(10, 25, 45, 0.55); /* тот же цвет что header */
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+.form * {
+    outline: none;
+}
+
+.form_data {
+    position: relative;
+}
+
+.form_data::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.7) url("../img/Designer.png") center / 70px no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+}
+
+.form_data._sending::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 650px) {
+    .form {
+        max-width: 350px;
+        margin: 0px auto;
+        color: #ffffff;
+        padding: 50px 0;
+
+    }
+    .form-control {
+        height: 50px;
+        padding: 0px 20px;
+        border-radius: 12px;
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+.form_title {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0px 0px 30px 0px;
+    text-align: center;
+}
+
+.form_description {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin: 0px 0px 30px 0px;
+    text-align: center;
+
+}
+
+.mb-3 {
+    margin: 0px 0px 20px 0px;
+    font-weight: 700;
+}
+
+.form-label {
+    font-size: 18px;
+    display: block;
+    margin: 0px 0px 10px 0px;
+}
+
+.form-control {
+    height: 50px;
+    padding: 0px 20px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.form-control._error {
+    border: 2px solid red;
+    box-shadow: none;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+    padding: 20px;
+}
+
+.form_additional-description {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 50px 0px 30px 0px;
+    text-align: center;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    background-color: rgba(41, 255, 30, 0.85);;
+    color: #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 5px 0 rgba(10, 25, 45, 0.55);
+    transition: background-color 0.5s ease 0s;
+    position: relative;
+    top: 0;
+
+}
+
+.btn:hover {
+    background-color: #0e9506;
+}
+
+.btn:active {
+    top: 3px;
+    box-shadow: 0 2px 0 #161b13;
+}
+
+.checkbox {
+    margin: 50px 0px 30px 0px;
+
+}
+
+.checkbox._error .checkbox_label::before {
+    border: 2px solid red;
+    box-shadow: none;
+
+}
+.checkbox_input {
+    display: none;
+}
+
+.checkbox_input:checked+ .checkbox_label::after {
+    transform: scale(1);
+}
+
+
+.checkbox_label {
+    font-size: 16px;
+    line-height: 140%;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.checkbox_label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 0px 10px 0px 0px;
+}
+
+.checkbox_label::after {
+    transition: transform 0.5s ease 0s;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: rgba(10, 25, 45, 0.85);
+    border-radius: 4px;
+    transform: scale(0);
+}
+
+.message {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 100px 0px 30px 0px;
+    text-align: center;
+}
+
+/* ===== Header ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 25, 45, 0.85); /* глубокий тёмно-синий */
+    backdrop-filter: blur(8px);
+}
+
+.header__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.logo__text {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.nav__list {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.nav__link {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.nav__link:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.nav__link--active {
+    background: rgba(41, 255, 30, 0.25);
+    box-shadow: 0 0 0 1px rgba(41, 255, 30, 0.5) inset;
+}
+
+/* Mobile header */
+@media (max-width: 650px) {
+    .header__container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .nav__list {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.hp-field {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ===== Cards / plates (same tone as header) ===== */
+.plate {
+    background: rgba(10, 25, 45, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 18px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.10);
+}
+
+.plate + .plate {
+    margin-top: 12px;
+}
+
+.page {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    color: #fff;
+}
+
+/* Pricing list */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.price-row strong {
+    font-weight: 800;
+}
+
+.price-tag {
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* About layout */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.media-card img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.media-caption {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+    line-height: 1.35;
+}
+
+@media (max-width: 850px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .form {
+        padding: 30px 20px;   /* уменьшили вертикаль, увеличили контроль */
+    }
+
+    .form-control,
+    textarea.form-control {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .mb-3 {
+        margin-bottom: 18px;
+    }
+}
+
+/* ===== Reviews ===== */
+
+.reviews {
+    margin-top: 40px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.review-card {
+    background: rgba(10, 25, 45, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    color: #ffffff;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.stars {
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 850px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
