@@ -470,3 +470,50 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== Features block ===== */
+
+.features-title {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 14px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Custom check icon */
+.features-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #29ff1e;
+    box-shadow: 0 0 10px rgba(41, 255, 30, 0.5);
+}
+
+/* Check mark inside circle */
+.features-list li::after {
+    content: "✓";
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b1b2b;
+}
+
