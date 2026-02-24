@@ -57,7 +57,7 @@ body {
     padding: 40px 30px;
 
     background: rgba(10, 25, 45, 0.55); /* тот же цвет что header */
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(7px);
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1);
 
@@ -343,7 +343,7 @@ textarea.form-control {
 
 .plate-background {
      background: rgba(10, 25, 45, 0.55);
-     backdrop-filter: blur(6px);
+     backdrop-filter: blur(7px);
 }
 
 .plate + .plate {
