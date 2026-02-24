@@ -57,7 +57,7 @@ body {
     padding: 40px 30px;
 
     background: rgba(10, 25, 45, 0.55); /* тот же цвет что header */
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1);
 
@@ -335,12 +335,15 @@ textarea.form-control {
 
 /* ===== Cards / plates (same tone as header) ===== */
 .plate {
-    background: rgba(10, 25, 45, 0.55);
-    backdrop-filter: blur(8px);
     border-radius: 12px;
     padding: 18px 18px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.10);
+}
+
+.plate-background {
+     background: rgba(10, 25, 45, 0.55);
+     backdrop-filter: blur(6px);
 }
 
 .plate + .plate {
@@ -517,3 +520,21 @@ textarea.form-control {
     color: #0b1b2b;
 }
 
+/* ===== Logo ===== */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100px;        /* регулируй размер тут */
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 650px) {
+    .logo-img {
+        height: 42px;
+    }
+}
